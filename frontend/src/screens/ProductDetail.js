@@ -82,7 +82,7 @@ function ProductDetail({ match,history }) {
                                   </ListGroup.Item>
                                 )}
                                 <ListGroup.Item>
-                                    <Button className = "btn-block" id = "addtocart" type = "button" disabled = {productdetail.countInstock==0}
+                                    <Button disabled = {productdetail.countInStock == 0} className = "btn-block" id = "addtocart" type = "button"
                                     onClick = {addtoCartFunction}>
                                     Add To Cart</Button>
                                 </ListGroup.Item>
