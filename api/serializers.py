@@ -34,4 +34,4 @@ class UserSerializerWithToken(UserSerializer):
         fields = ['_id','isAdmin','username','email','name','token']
     def get_token(self,obj):
         token = RefreshToken.for_user(obj)
-        return str(token)
+        return str(token.access_token)
