@@ -31,12 +31,19 @@ function Header() {
                         Profile
                       </NavDropdown.Item>
                     </LinkContainer>
+                    {userInfo.isAdmin &&
+                      <LinkContainer to = '/admin/users'>
+                        <NavDropdown.Item>
+                          Users
+                        </NavDropdown.Item>
+                      </LinkContainer>
+                    }
                     <NavDropdown.Item onClick = {logouthandler}>Logout</NavDropdown.Item>
                   </NavDropdown>
+
                 ): <LinkContainer to = '/login'>
                   <Nav.Link ><i className = "fas fa-user"></i>Login</Nav.Link>
                 </LinkContainer>}
-
             </Nav>
             </Navbar.Collapse>
           </Container>

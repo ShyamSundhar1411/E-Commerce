@@ -24,7 +24,7 @@ function RegisterScreen({location,history}) {
     },[history,userInfo,redirect])
     const submitHandler = (e) => {
       e.preventDefault()
-      if (password != confirmpassword){
+      if (password !== confirmpassword){
         setMessage('Passwords Do Not Match')
     }else{
         dispatch(register(name,email, password))
@@ -61,7 +61,7 @@ function RegisterScreen({location,history}) {
                 onChange = {(e) => setConfirmPassword(e.target.value)}>
               </Form.Control>
           </Form.Group>
-          <Button type = 'submit' variant = "primary" className = 'my-3'>Sign In</Button>
+          <Button type = 'submit' variant = "primary" className = 'my-3'>Register</Button>
         </Form>
         <Row className = 'py-3'>
           <Col>
