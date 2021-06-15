@@ -22,3 +22,7 @@ h2{
 #checkout{
   width : 100%;
 }
+
+#create{
+  float: right;
+}

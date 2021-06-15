@@ -4,29 +4,35 @@ import {Table,Button} from 'react-bootstrap'
 import { useDispatch,useSelector } from 'react-redux'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { listusers } from '../actions/userAction'
+import { listusers,deleteuser } from '../actions/userAction'
 function UserListScreen({history}) {
   const dispatch = useDispatch()
   const userList = useSelector(state => state.userList)
   const userLogin = useSelector(state => state.userLogin)
   const {userInfo} = userLogin
   const {loading,error,users} = userList
-  const deleteHandler = (id) => {
-    console.log(id)
-  }
+  const userDelete = useSelector(state => state.userDelete)
+  const {success: successDelete} = userDelete
+
   useEffect(() => {
     if (userInfo && userInfo.isAdmin){
     dispatch(listusers())
   }else{
     history.push('/login')
   }
-},[dispatch,history])
+},[dispatch,history,successDelete,userInfo])
+const deleteHandler = (id) => {
+  if(window.confirm("Are you sure  you want to delete this user?")){
+    dispatch(deleteuser(id))
+  }
+}
     return (
         <div>
           <h1>Users</h1>
+          {successDelete && <Message variant = "success">{successDelete}</Message>}
           {loading ?(
            <Loader/>)
-           : error ? (<Message variant = 'danger'>{error}</Message>)
+           : error ? (<Message variant = 'danger'>"User Deletio Successful"</Message>)
            :(
              <Table striped bordered hover responsive className='table-sm'>
                             <thead>

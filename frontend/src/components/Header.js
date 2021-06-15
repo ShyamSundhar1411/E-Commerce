@@ -31,19 +31,22 @@ function Header() {
                         Profile
                       </NavDropdown.Item>
                     </LinkContainer>
-                    {userInfo.isAdmin &&
-                      <LinkContainer to = '/admin/users'>
-                        <NavDropdown.Item>
-                          Users
-                        </NavDropdown.Item>
-                      </LinkContainer>
-                    }
                     <NavDropdown.Item onClick = {logouthandler}>Logout</NavDropdown.Item>
                   </NavDropdown>
 
                 ): <LinkContainer to = '/login'>
                   <Nav.Link ><i className = "fas fa-user"></i>Login</Nav.Link>
                 </LinkContainer>}
+                {userInfo && userInfo.isAdmin && (
+                  <NavDropdown title='Admin' id='adminmenue'>
+                    <LinkContainer to='/admin/users'>
+                      <NavDropdown.Item>Users</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to='/admin/products'>
+                        <NavDropdown.Item>Products</NavDropdown.Item>
+                      </LinkContainer>
+                  </NavDropdown>
+                )}
             </Nav>
             </Navbar.Collapse>
           </Container>

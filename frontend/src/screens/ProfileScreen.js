@@ -23,7 +23,7 @@ function ProfileScreen({location,history}) {
     if (!userInfo){
       history.push('/login')
     }else{
-      if(!user || !user.name || success){
+      if(!user || !user.name || success || userInfo._id !== user._id){
         dispatch({type:USER_UPDATE_RESET})
         dispatch(getuserDetails('profile'))
       }else{
