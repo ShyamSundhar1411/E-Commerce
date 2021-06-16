@@ -14,6 +14,7 @@ django-environ = "*"
 djangorestframework-simplejwt = "*"
 django-cors-headers = "*"
 psycopg2 = "*"
+pillow = "*"
 
 [dev-packages]
 
