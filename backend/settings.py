@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fcr&%pv37+6yzfug+iv1)rjrh!o!kgm+g$w3)l*loy(lg_e2n8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost','http://zijade.herokuapp.com','www.zijade.herokuapp.com','zijade.herokuapp.com']
 
