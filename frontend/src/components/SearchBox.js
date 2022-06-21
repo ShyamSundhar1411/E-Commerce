@@ -1,11 +1,11 @@
 import React, {useState}from 'react'
 import {Form,Button,Row,Col} from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 
 function SearchBox() {
     const [keyword,setKeyword] = useState('')
-    let history = useNavigate()
+    let history = useHistory()
     const submitHandler = (e) => {
       e.preventDefault()
       if(keyword){
